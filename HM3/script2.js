@@ -2,10 +2,7 @@
 /*
 Взяти файл template_2.html та працювати в ньому
 - Напишіть код, який :
--- отримує всі елементи 'sub-header' та змінює колір тексту у видаку якщо текст елемнту = content 2 segment . Колір отримати з prompt()
--- отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
--- отримати елементи p та змінити їм paddin на довільне значення
--- отримати елементи з класом text2 та змінити їм текст на довільне значення */
+ */
 
 /* -- змінює колір тексту елемнту з ід main_header на будь-який інший*/
 // let main_header = document.getElementById('main_header');
@@ -73,3 +70,50 @@
 // }
 
 /* -- отримує всі елементи 'sub-header' та змінює колір фону. Фон отримати з prompt()*/
+
+// let subC=document.getElementsByClassName('sub-header');
+// let color=prompt('Color');
+// for (let i=0;i<subC.length;i++) {    
+//     subC[i].style.backgroundColor =color;
+// }
+
+/* -- отримує всі елементи 'sub-header' та змінює колір тексту у видаку 
+якщо текст елемнту = content 2 segment . Колір отримати з prompt()
+*/
+
+// let subC=document.getElementsByClassName('sub-header');
+// let color=prompt('Color');
+// for (let i=0;i<subC.length;i++) {    
+//         if (subC[i].textContent==='content 2 segment') {
+//         subC[i].style.color = color;
+//     }
+  
+// }
+
+/* -- отримує елемент з класом content_1 та заміняє  в ньому тест на довільний. Текст отримати з prompt()
+*/
+// let subC=document.getElementsByClassName('content_1');
+
+// for (let i=0;i<subC.length;i++) {    
+//     subC[i].textContent = prompt('Enter_text') ;
+    
+//         }
+      
+/* -- отримати елементи p та змінити їм paddin на довільне значення
+*/
+
+// let arrP=document.getElementsByTagName('p');
+
+// for (let i=0;i<arrP.length;i++) {    
+//     arrP[i].style.padding='5px'
+//         }
+
+/* -- отримати елементи з класом text2 та змінити їм текст на довільне значення
+*/
+
+// let subC=document.getElementsByClassName('text2');
+
+// for (let i=0;i<subC.length;i++) {    
+//     subC[i].textContent = 'Enter_text' ;
+    
+//         }
