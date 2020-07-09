@@ -165,31 +165,20 @@ let users = [
     {name: 'max', age: 31, status: true}
 ];
 
-if (users.name==='andrey') {
-    let n=users.key;
-    console.log(users[n].status);
-}
-// console.log(users[7].status);
-// console.log(users[4].status);
-// console.log(users[users.length-2].name);
-// console.log(users[2].name);
-// console.log(users[4].status);
+console.log(users[7].status);
+console.log(users[4].status);
+console.log(users[users.length-2].name);
+console.log(users[2].name);
+console.log(users[4].status);
+console.log(users[6].age);
+console.log(users[3].age);
+console.log(`${users[4].name} ${users[4].age}`);
+console.log(`${users[5].age} ${users[5].status}`);
+
 
 /*
 
 
--Візьміть файл template1.html, підключіть до нього скрипт, і працюйте в ньому.
-
--- Напишіть код,  який за допомоги document.getElementById або document.getElementsByClassName або document.getElementsByTagName :
-- отримує текст з параграфа з id "content"
-- отримує текст з блоку з id "rules"
-- замініть текст параграфа з id 'content' на будь-який інший
-- замініть текст параграфа з id 'rules' на будь-який інший
-- змініть кожному елементу колір фону на червоний
-- змініть кожному елементу колір тексту на синій
-- отримати весь список класів елемента з id=rules і вивести їх в console.log
-- отримати всі елементи з класом fc_rules
-- поміняти колір тексту у всіх елементів fc_rules на червоний
 
 ====================
 ====================
