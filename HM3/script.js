@@ -45,13 +45,16 @@ console.log(objDog);
 - 3 5 людей
 - з 5 автомобілів*/
 
-let Dog=[ 'Dog1','Dog2','Dog3','Dog4','Dog5'];
+let Dog=[ {name:'Dog1',age:2,color:'black'},{name:'Dog2',age:1,color:'blue'},{name:'Dog3',age:5,color:'brown'},
+{name:'Dog4',age:4,color:'red'},{name:'Dog5',age:3,color:'green'}];
 console.log(Dog);
 
-let Person=[ 'Person1','Person2','Person3','Person4','Person5'];
+let Person=[ {name:'Person1',age:20},{name:'Person2',age:30},{name:'Person3',age:40},{name:'Person4',age:50},
+{name:'Person5',age:60}];
 console.log(Person);
 
-let Car=[ 'Car1','Car2','Car3','Car4','Car5'];
+let Car=[ {name:'Car1',year:2008},{name:'Car2',year:2010},{name:'Car3',year:2020},{name:'Car4',year:1998},
+{name:'Car5',year:1984}];
 console.log(Car);
 
 /*-- створити об'єкт (не меньше 5ти властивостей) який описує, 
