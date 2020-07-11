@@ -1006,18 +1006,7 @@ const wrap = document.getElementById('wrap');
 let arr=[];
 
 for (let i=0;i<rules.length;i++) {
-    //     arr=rules[i];
-    //     for (j=0;j<arr.length;j++){
-
-    //     const div = document.createElement('div');
-    //     div.innerText=arr[j];
-    //     console.log(div)
-    //     wrap.appendChild(div);
-    //     }
-
-    // }
-
-        const div = document.createElement('div');
+            const div = document.createElement('div');
         div.innerText=rules[i].title
         console.log(div)
         wrap.appendChild(div);

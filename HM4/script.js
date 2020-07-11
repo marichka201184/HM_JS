@@ -1,16 +1,182 @@
-/*
-- створити функцію яка виводить масив
-- створити функцію яка заповнює масив рандомними числами та виводить його. Для виведення використати попвередню функцію.
-- створити функцію яка приймає три числа та виводить та повертає найменьше.
-- створити функцію яка приймає три числа та виводить та повертає найбільше.
-- створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
-- створити функцію яка виводить масив
-- створити функцію яка повертає найбільше число з масиву
-- створити функцію яка повертає найменьше число з масиву
-- створити функцію яка приймає масив чисел та складає значення елементів масиву та повертає його.
-- створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
-- Створити функцію яка приймає масив будь яких объектів, та повертає значення кількості об'єктів в масиві
-- Створити функцію яка приймає масив будь яких объектів, та повертає загальн кількість полів в них
+/* - створити функцію яка виводить масив*/
+// function arroutput(arr=[]){
+//     console.log(arr);   
+// };
+/* - створити функцію яка заповнює масив рандомними числами та виводить його.*/
+// function Random_arr(){
+//     let max=+prompt('Enter max');
+//     let min=+prompt('Enter min');
+//     let n=+prompt('Enter i');
+//     let arr=[];
+//     for (let i=0;i<n;i++) {
+//              arr[i]=Math.round(Math.random() * (max - min) + min) ;
+//          }
+//     arroutput(arr)
+// };
+
+//  Random_arr();
+
+/*  Для виведення використати попвередню функцію.
+- створити функцію яка приймає три числа та виводить та повертає найменьше.*/
+
+// function numbers() {
+//     let a=+prompt('Enter first number');
+//     let b=+prompt('Enter second number');
+//     let c=+prompt('Enter third number');
+
+//     let min=0;
+    
+
+//     let arr=[a,b,c];
+//     arroutput(arr);
+    
+//     if (a<b&&a<c) {
+//         min=a
+//     }
+
+//     else if (b<a&&b<c) {
+//         min=b
+//     }
+
+//     else min=c;
+//     console.log(min);
+//     return min;
+
+
+// }
+
+// numbers();
+
+/* - створити функцію яка приймає три числа та виводить та повертає найбільше.*/
+
+// function numbers() {
+//         let a=+prompt('Enter first number');
+//         let b=+prompt('Enter second number');
+//         let c=+prompt('Enter third number');
+//         let max=0;
+  
+//         let arr=[a,b,c];
+//         arroutput(arr);
+        
+//         if (a>b&&a>c) {
+//             max=a     }
+    
+//         else if (b>a&&b>c) {
+//             max=b        }
+    
+//         else max=c;
+//         console.log(max);
+//         return max;
+//     }
+    
+//     numbers();
+
+/* - створити функцію яка приймає будь-яку кількість чисел, повертає найменьше, а виводить найбільше
+*/
+
+// function min_max() {
+//     max=arguments[0];
+//     min=arguments[0];
+
+//     for (let i of arguments) {
+//         if(i>=max){
+//                  max= i;
+//                }
+//                if(i<=min){
+//                  min = i;
+//                }
+//              }
+//              console.log(max);
+//              return min;
+//             }  
+// console.log(min_max(108,2,-500,67,1,609));
+
+/* - створити функцію яка виводить масив*/
+// function arroutput(arr=[]){
+//     console.log(arr);   
+// };
+
+/*- створити функцію яка повертає найбільше число з масиву */
+//  function max(arr=[]) {
+//      let max=arr[0];
+//      for(let i=0;i<arr.length;i++){
+//         if(arr[i]>max){
+//             max=arr[i];
+//         }
+//      }
+//      return max;   
+//  }
+
+//  console.log(max(arr=[2,5,9,43,677,98,-200]));
+
+/*- створити функцію яка повертає найменьше число з масиву */
+
+//  function min(arr=[]) {
+//      let min=arr[0];
+//      for(let i=0;i<arr.length;i++){
+//         if(arr[i]<min){
+//             min=arr[i];
+//         }
+//      }
+//      return min;   
+//  }
+
+//  console.log(min(arr=[2,5,9,43,677,98,-200]));
+
+/*- створити функцію яка приймає масив чисел та складає значення елементів масиву та повертає його. */
+//  function sum(arr=[]) {
+//      let sum=0;
+//      for(let i=0;i<arr.length;i++){
+//        sum=sum+arr[i] 
+//      }
+//      return sum;   
+//  }
+
+//  console.log(sum(arr=[2,5,9,1]));
+
+/* - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.*/
+//  function avg(arr=[]) {
+//      let sum=0;
+//      for(let i=0;i<arr.length;i++){
+//        sum=sum+arr[i] 
+//      }
+//      return sum/arr.length;   
+//  }
+
+//  console.log(avg(arr=[2,5,9,1]));
+
+/* - Створити функцію яка приймає масив будь яких объектів, та повертає значення кількості об'єктів в масиві*/
+//  function count(arr=[]) {
+//      let cnt=arr.length;
+//      return cnt;   
+//  }
+
+//  console.log(count(arr=[2,5,9,1]));
+
+/*- Створити функцію яка приймає масив будь яких объектів, та повертає загальн кількість полів в них */
+  function count(arr=[]) {
+     let sum=1;
+     let sum1=0;
+     for (let i=0;i<arr.length;i++){
+         let n=arr[i];
+             for (let j=0;j<n.length;j++){
+                  sum=sum+n.length
+         }
+         console.log(sum);
+         sum1=sum1+sum
+     }
+     return sum1;   
+ }
+
+ console.log(count(
+     arr=[ {name:'Dog1',age:2,color:'black'},
+           {name:'Dog2',age:1,color:'blue'},
+           {name:'Dog3',age:5,color:'brown'},
+           {name:'Dog4',age:4,color:'red'},
+           {name:'Dog5',age:3,color:'green'}]
+        ));
+
+  /*
 - створити функцію  яка скаладає значення елементів з однаковими індексами  та повертає новий результуючий масив.
   Приклад
   [1,2,3,4]
