@@ -786,98 +786,229 @@
 let usersWithCities = [{id: 1, name: 'vasya', age: 31, status: false, address: 
 {user_id: 1, country: 'Ukraine', city: 'Ternopil'}}....]*/
 
-let usersWithId = [
-{id: 1, name: 'vasya', age: 31, status: false}, 
-{id: 2, name: 'petya', age: 30, status: true}, 
-{id: 3, name: 'kolya', age: 29, status: true},
-{id: 4, name: 'olya', age: 28, status: false}
-];
+// let usersWithId = [
+// {id: 1, name: 'vasya', age: 31, status: false}, 
+// {id: 2, name: 'petya', age: 30, status: true}, 
+// {id: 3, name: 'kolya', age: 29, status: true},
+// {id: 4, name: 'olya', age: 28, status: false}
+// ];
 
-let citiesWithId = [
-{user_id: 1, country: 'Ukraine', city: 'Ternopil'}, 
-{user_id: 2, country: 'Poland', city: 'Krakow'}, 
-{user_id: 3, country: 'USA', city: 'Portland'}, 
-{user_id: 4, country: 'USA', city: 'Miami'}
-];		
+// let citiesWithId = [
+// {user_id: 1, country: 'Ukraine', city: 'Ternopil'}, 
+// {user_id: 2, country: 'Poland', city: 'Krakow'}, 
+// {user_id: 3, country: 'USA', city: 'Portland'}, 
+// {user_id: 4, country: 'USA', city: 'Miami'}
+// ];		
 
-for (let i=0;i<usersWithId.length;i++) {
-    for (let j=0;j<citiesWithId.length;j++) {
+// for (let i=0;i<usersWithId.length;i++) {
+//     for (let j=0;j<citiesWithId.length;j++) {
 
-        if (usersWithId[i].id === citiesWithId[j].user_id) {
-            usersWithId[i].address=citiesWithId[j]
-        }
+//         if (usersWithId[i].id === citiesWithId[j].user_id) {
+//             usersWithId[i].address=citiesWithId[j]
+//         }
+//     }
+// }
+
+// console.log(usersWithId);
+
+/*- створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст з селекторів по id ,
+ class та тегу */
+
+// let newElement = document.createElement('div');
+//     newElement.id = 'star'; 
+//     newElement.className = "starClass";
+//     newElement.innerHTML = '<h1> Super star </h1>'; ;
+//     document.body.appendChild(newElement);
+
+//     let newId = document.getElementById('star');
+//     console.log(newId.textContent);
+
+//     let newDiv = newId.getElementsByTagName('h1');
+//     for (let i = 0; i < newDiv.length; i++) {
+//     console.log(newDiv[i].textContent);  } 
+
+//     let newClass = document.getElementsByClassName('starClass');
+//     for (let i = 0; i < newClass.length; i++) {
+//     console.log(newClass[i].textContent);  } 
+ 
+/*- змінити цей текст використовуючи селектори id, class,  tag */
+// let newId1 = document.getElementById('star');
+// newId1.innerText = 'HELLO1';
+// console.log(newId1.textContent);
+
+// let newDiv1 = newId.getElementsByTagName('h1');
+// for (let i = 0; i < newDiv1.length; i++) {
+//     newDiv1[i].innerText = 'HELLO2';   
+// console.log(newDiv1[i].textContent);  } 
+
+// let newClass1 = document.getElementsByClassName('starClass');
+// for (let i = 0; i < newClass1.length; i++) {
+//     newClass1[i].innerText = 'HELLO3';   
+//     console.log(newClass1[i].textContent);  } 
+//     ;
+/*- змінити висоту та ширину блоку використовуючи селектори id, class,  tag */
+// let newId2 = document.getElementById('star');
+// newId2.style.width = '100px';
+// newId2.style.height = '100px';
+
+// let newDiv2 = newId.getElementsByTagName('h1');
+// for (let i = 0; i < newDiv2.length; i++) {
+//     newDiv2[i].style.width = '200px';
+//     newDiv2[i].style.height = '200px'; 
+//   } 
+
+// let newClass2 = document.getElementsByClassName('starClass');
+// for (let i = 0; i < newClass2.length; i++) {
+//     newClass2[i].style.width = '300px';
+//     newClass2[i].style.height = '300px';   } 
+//     ;
+
+/* - за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені*/
+// let newElement = document.createElement('table');
+//   newElement.id = 'tablearea';
+//   let TabId=document.getElementById('tablearea')
+//   	let tr = document.createElement('tr'); // создаем tr-ку
+	
+// 	// Заполняем tr-ку td-шками:
+// 	for (let j = 1; j <= 3; j++) {
+// 		let td = document.createElement('td'); // создаем td-шку
+// 		td.innerHTML = j; // пишем в нее текст
+		
+// 		tr.appendChild(td); // добавляем созданную td-шку в конец tr-ки
+// 	}
+	
+// 	newElement.appendChild(tr); // добавляем созданную tr-ку в конец таблицы
+//     document.body.appendChild(newElement);
+
+ /* - за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
+*/
+
+// let newElement = document.createElement('table');
+//   newElement.id = 'tablearea';
+//   let TabId=document.getElementById('tablearea')
+//   for (let i = 1; i <= 10; i++) {
+//   	let tr = document.createElement('tr'); // создаем tr-ку
+	
+// 	// Заполняем tr-ку td-шками:
+// 	for (let j = 1; j <= 3; j++) {
+// 		let td = document.createElement('td'); // создаем td-шку
+// 		td.innerHTML = j; // пишем в нее текст
+		
+// 		tr.appendChild(td); // добавляем созданную td-шку в конец tr-ки
+// 	}
+	
+//     newElement.appendChild(tr); // добавляем созданную tr-ку в конец таблицы
+// }
+//     document.body.appendChild(newElement);
+
+/* - за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків 
+з m ячейками всередені. n та m отримати з prompt
+*/
+// let n=prompt('Count of records');
+// let m=prompt('Count of columns');
+// let newElement = document.createElement('table');
+//   newElement.id = 'tablearea';
+//   let TabId=document.getElementById('tablearea')
+//   for (let i = 1; i <= n; i++) {
+//   	let tr = document.createElement('tr'); // создаем tr-ку
+	
+// 	// Заполняем tr-ку td-шками:
+// 	for (let j = 1; j <= m; j++) {
+// 		let td = document.createElement('td'); // создаем td-шку
+// 		td.innerHTML = j; // пишем в нее текст
+		
+// 		tr.appendChild(td); // добавляем созданную td-шку в конец tr-ки
+// 	}
+	
+//     newElement.appendChild(tr); // добавляем созданную tr-ку в конец таблицы
+// }
+//     document.body.appendChild(newElement);
+
+/*--Завантажити з мережі будь-який шаблон сайту. Підключити до нього свій скріпт-файл.
+ У файлі прописати наступні доступи та дії
+ - знайти всі елементі, які мають class
+ - знайти всі параграфи ,та змінити текст на hello oktenweb!
+ - знайти всі div та змінити ім колір на червоний */
+
+//  let classes = document.querySelectorAll('[class]');
+//  console.log(classes);
+
+//  let AllP=document.getElementsByTagName('p');
+
+//  for (i=0;i<AllP.length;i++){
+//     AllP[i].innerText = 'hello oktenweb!';   
+//     // console.log(newDiv1[i].textContent);    
+//  }
+
+//  let AllDiv=document.getElementsByTagName('div');
+//  for (let i=0;i<AllDiv.length;i++){
+//     AllDiv[i].style.backgroundColor ='red'; 
+//  }
+
+/*
+- є сторінка rules.html. Контентом сторінки є заголовки та параграфи. 
+Заголовки (h2) характеризують тему контенту яка вказана в параграфі.
+створити скрипт, котрий зчитує всі заголовки, та робить в блоці з id=content з них список(ul>li),
+ який буде змістом того, що знаходиться на сторінці.
+Скріпт повинен працювати навіть якщо кількість блоків з заголовком та параграфом зміниться.*.*/
+  let AllH=document.getElementsByTagName('h2');
+  let newUl=document.createElement('ul');
+ for (i=0;i<AllH.length;i++){
+     AllH[i].innerHTML=`<li>${AllH[i].textContent}</li>`
+     newUl.li= AllH[i].innerHTML;
     }
-}
+document.body.appendChild(newUl);
 
-console.log(usersWithId);
+/*
+-Є масив котрий характеризує правила. Створити скрипт який ітерує цей масив, та робить з кожне правило
+ в окремому блоці.
+При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
+Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
+*/
+			// let rules = [
+			// 	{
+			// 		title: 'Первое правило Бойцовского клуба.',
+			// 		body: 'Никому не рассказывать о Бойцовском клубе.'
+			// 	},
+			// 	{
+			// 		title: 'Второе правило Бойцовского клуба.',
+			// 		body: 'Никогда никому не рассказывать о Бойцовском клубе.'
+			// 	},
+			// 	{
+			// 		title: 'Третье правило Бойцовского клуба.',
+			// 		body: 'В схватке участвуют только двое.'
+			// 	},
+			// 	{
+			// 		title: 'Четвертое правило Бойцовского клуба.',
+			// 		body: 'Не более одного поединка за один раз.'
+			// 	},
+			// 	{
+			// 		title: 'Пятое правило Бойцовского клуба.',
+			// 		body: 'Бойцы сражаются без обуви и голые по пояс.'
+			// 	},
+			// 	{
+			// 		title: 'Шестое правило Бойцовского клуба.',
+			// 		body: 'Поединок продолжается столько, сколько потребуется.'
+			// 	},
+			// 	{
+			// 		title: 'Седьмое правило Бойцовского клуба.',
+			// 		body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
+			// 	},
+			// 	{
+			// 		title: 'Восьмое и последнее правило Бойцовского клуба.',
+			// 		body: 'Новичок обязан принять бой.'
+			// 	},
+
+			// ];
+
 
 
 /*
-- створити розмітці блок з id, class та текстом в середені. Зчитати окремо цей текст з селекторів по id , class та тегу
-- змінити цей текст використовуючи селектори id, class,  tag
-- змінити висоту та ширину блоку використовуючи селектори id, class,  tag
-- за допомоги document.createElement та appendChild створити таблицю на 1 рядок з трьома ячейками всередені
-- за допомоги document.createElement, appendChild та циклу створити таблицю на 10 рядків з трьома ячейками всередені
-- за допомоги document.createElement, appendChild та 2х циклів створити таблицю на 10 рядків з 5 ячейками всередені
-- за допомоги document.createElement, appendChild та 2х циклів створити таблицю на n рядків з m ячейками всередені. n та m отримати з prompt
+*** за допомогою fetch (як в прикладі) 
+отримати від jsonplaceholder всі users.
+ За допомогою document.createElement вивести їх в браузер.
+  Помістити кожен окремий об'єкт в блок, при цьому кожен внутрішній об'єкт в свій блок (блок в блоці).
 
---Завантажити з мережі будь-який шаблон сайту. Підключити до нього свій скріпт-файл. У файлі прописати наступні доступи та дії
- - знайти всі елементі, які мають class
- - знайти всі параграфи ,та змінити текст на hello oktenweb!
- - знайти всі div та змінити ім колір на червоний
-
-============
-====class===
-============
-
-- є сторінка rules.html. Контентом сторінки є заголовки та параграфи. Заголовки (h2) характеризують тему контенту яка вказана в параграфі.
-створити скрипт, котрий зчитує всі заголовки, та робить в блоці з id=content з них список(ul>li), який буде змістом того, що знаходиться на сторінці.
-Скріпт повинен працювати навіть якщо кількість блоків з заголовком та параграфом зміниться.
-
--Є масив котрий характеризує правила. Створити скрипт який ітерує цей масив, та робить з кожне правило в окремому блоці.
-При цому в блоці, номер правила записати в свій блок, текст правила записати в свій окремий блок.
-Результатом відпрацювання скріпта повинна бути структура яка міститься в блоці wrap файла rule.html
-
-			let rules = [
-				{
-					title: 'Первое правило Бойцовского клуба.',
-					body: 'Никому не рассказывать о Бойцовском клубе.'
-				},
-				{
-					title: 'Второе правило Бойцовского клуба.',
-					body: 'Никогда никому не рассказывать о Бойцовском клубе.'
-				},
-				{
-					title: 'Третье правило Бойцовского клуба.',
-					body: 'В схватке участвуют только двое.'
-				},
-				{
-					title: 'Четвертое правило Бойцовского клуба.',
-					body: 'Не более одного поединка за один раз.'
-				},
-				{
-					title: 'Пятое правило Бойцовского клуба.',
-					body: 'Бойцы сражаются без обуви и голые по пояс.'
-				},
-				{
-					title: 'Шестое правило Бойцовского клуба.',
-					body: 'Поединок продолжается столько, сколько потребуется.'
-				},
-				{
-					title: 'Седьмое правило Бойцовского клуба.',
-					body: 'Если противник потерял сознание или делает вид, что потерял, или говорит «Хватит» — поединок окончен.'
-				},
-				{
-					title: 'Восьмое и последнее правило Бойцовского клуба.',
-					body: 'Новичок обязан принять бой.'
-				},
-
-			];
-
-
-
-
-*** за допомогою fetch (як в прикладі) отримати від jsonplaceholder всі users. За допомогою document.createElement вивести їх в браузер. Помістити кожен окремий об'єкт в блок, при цьому кожен внутрішній об'єкт в свій блок (блок в блоці).
 *** за допомогою fetch (як в прикладі) отримати від jsonplaceholder всі posts. За допомогою document.createElement вивести їх в браузер. Помістити кожен окремий об'єкт в блок, при цьому кожен внутрішній об'єкт(якщо він існує) в свій блок (блок в блоці).
 *** за допомогою fetch (як в прикладі) отримати від jsonplaceholder всі comments. За допомогою document.createElement вивести їх в браузер. Помістити кожен окремий об'єкт в блок, при цьому кожен внутрішній об'єкт(якщо він існує) в свій блок (блок в блоці).
 ****** при помощи fetch (как в примере) получить от jsonplaceholder все posts. Внутри последнего then() сделать еще один fetch который сделает запрос и получит все comments. Объеденить соответсвующий post с соответсвующими comment и вывести в браузер. Подсказка : в каждом comment есть поле postId которое определяет какой комментарий принадлежит какому посту
