@@ -35,13 +35,9 @@
 
 // -- перебрать (проитерировать) массив при помощи foreach()
 
-// arr.forEach(value => {
-//   if (value ===false) {
-//     return
-//   }
 
-//   console.log(value);
-// });
+//   arr.forEach( value => console.log(value));
+
 
 
 // console.log(arr);
