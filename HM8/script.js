@@ -299,7 +299,7 @@ dept:`${dept}`,brth:`${brth}`});
    
   }
     
-  let sv=function () {  
+  function sv() {  
     users= []    
     users = JSON.parse(localStorage.getItem("users") || "[]");
   
