@@ -5,7 +5,7 @@
      <ul>
      <li v-for="(todo, index) in todo" :key="index">
         {{ todo }} 
-        <button v-on:click="deleteDo" >Delete</button>
+        <button @click="deleteDo" >Delete</button>
      </li>
     </ul> 
   </div>
@@ -21,7 +21,8 @@ export default {
       show: true,
       todo: ['Go to the store', 'Go for a walk', 'Make a coffee'],
       newDo:'',
-      i:0
+      i:0,
+      arr:[],
     }
   },
       methods: {
@@ -30,11 +31,12 @@ export default {
         this.todo.push(this.newDo)
         this.newDo=''
         this.todo.length >9 ? this.show=false :true;
+         console.log(this.show)
+        console.log( this.todo.length )
       },
       deleteDo() {
         this.todo.splice(this.i, 1);
-        //this.todo.length >9 ? this.show=false :true;
-
+        this.show=true;
       },
       
       },
