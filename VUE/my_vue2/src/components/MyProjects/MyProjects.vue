@@ -2,12 +2,12 @@
  <div>
    <h1>SUMMARY OF WORK EXPERIENCE</h1>
     <input type="text" class="marg" v-model="todo.job">
-    <button  v-on:click="Add">Add new job</button>
+    <button  @click="Add">Add new job</button>
     <button  v-on:click="Update">Reload</button>
     <ul>
      <li v-for="(jobs, i) in this.jobs" :key="i">
-       {{jobs.job}}  
-       <button @click="deleteDo" >Delete</button>          
+       {{jobs.value.job}} 
+      <button @click="deleteDo(jobs.id)" >Delete</button>          
      </li>
     </ul>    
        
@@ -21,23 +21,22 @@ export default {
 
   beforeMount() {
        this.$http.get('https://myhm-fcbd9.firebaseio.com/todo.json')
-      .then((res) => {
-        console.log(res, 'RESPONSE');
+      .then((res) => {       
         return res.json()
-      }).then((res) => {
-        console.log(res, 'JSON');
-        Object.values(res).forEach(u => this.jobs.push(u));
-        console.log(this.jobs)
-        
+      }).then((res) => {  
+            Object.entries(res).forEach(entry => {
+            const [key, value] = entry;
+            this.jobs.push({id:key,value})
+  
+  console.log(key, value);
+})
+     
       })
-      
-    },
-
- 
-  data() {
+    }  ,   
+        
+   data() {
     return {
       todo: {
-          id:'',
           job: ''},
        
       jobs:[],
@@ -51,32 +50,26 @@ export default {
     Add() {
     
         this.$http.post(`https://myhm-fcbd9.firebaseio.com/todo.json`, this.todo)
-          .then((res) => {
-            console.log(res);
-            console.log(this.todo)
-            console.log(this.jobs)
-          });
+          ;            
+    },
        
-    },
-    deleteDo() {
-    
-       this.$http.delete(`https://myhm-fcbd9.firebaseio.com/todo.json`)
-      .then((res) => {
-        console.log(res, 'DELETE');
-      });
-     
-    },
+    deleteDo(event) {
+       this.$http.delete(`https://myhm-fcbd9.firebaseio.com/todo/${event}.json`)
+              },
 
     Update() {
-       this.jobs=[];         
+      this.jobs=[];
        this.$http.get('https://myhm-fcbd9.firebaseio.com/todo.json')
-      .then((res) => {
-        console.log(res, 'RESPONSE');
+      .then((res) => {       
         return res.json()
-      }).then((res) => {
-        console.log(res, 'JSON');
-        Object.values(res).forEach(u => this.jobs.push(u));
-        console.log(this.jobs)
+      }).then((res) => {  
+            Object.entries(res).forEach(entry => {
+            const [key, value] = entry;
+            this.jobs.push({id:key,value})
+  
+  console.log(key, value);
+})
+     
       })
     }
 
