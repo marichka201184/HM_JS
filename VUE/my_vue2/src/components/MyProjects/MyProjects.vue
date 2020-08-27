@@ -19,19 +19,8 @@
 export default {
   name: 'MyProjects',
 
-  beforeMount() {
-       this.$http.get('https://myhm-fcbd9.firebaseio.com/todo.json')
-      .then((res) => {       
-        return res.json()
-      }).then((res) => {  
-            Object.entries(res).forEach(entry => {
-            const [key, value] = entry;
-            this.jobs.push({id:key,value})
-  
-  console.log(key, value);
-})
-     
-      })
+  beforeMount() {    
+    this.getData()
     }  ,   
         
    data() {
@@ -45,33 +34,8 @@ export default {
   },
    methods: {
 
-    
-
-    Add() {
-    
-        this.$http.post(`https://myhm-fcbd9.firebaseio.com/todo.json`, this.todo)
-          ;       
-           this.jobs=[];
-       this.$http.get('https://myhm-fcbd9.firebaseio.com/todo.json')
-      .then((res) => {       
-        return res.json()
-      }).then((res) => {  
-            Object.entries(res).forEach(entry => {
-            const [key, value] = entry;
-            this.jobs.push({id:key,value})
-  
-  console.log(key, value);
-})
-     
-      })     
-    },
-       
-    deleteDo(event) {
-       this.$http.delete(`https://myhm-fcbd9.firebaseio.com/todo/${event}.json`)
-              },
-
-    Update() {
-      this.jobs=[];
+   getData() {
+   this.jobs=[];
        this.$http.get('https://myhm-fcbd9.firebaseio.com/todo.json')
       .then((res) => {       
         return res.json()
@@ -84,6 +48,25 @@ export default {
 })
      
       })
+   } ,
+
+    async Add() {
+      try {
+        await this.$http.post(`https://myhm-fcbd9.firebaseio.com/todo.json`, this.todo);
+      } catch (e) {
+        console.log(e);
+        // finally буде спрацьовувати після усього вище
+      } finally {
+      this.getData()
+      }
+    },
+       
+    deleteDo(event) {
+       this.$http.delete(`https://myhm-fcbd9.firebaseio.com/todo/${event}.json`)
+              },
+
+    Update() {
+    this.getData()
     }
 
   }
