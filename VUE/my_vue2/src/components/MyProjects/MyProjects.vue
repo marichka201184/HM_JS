@@ -50,7 +50,20 @@ export default {
     Add() {
     
         this.$http.post(`https://myhm-fcbd9.firebaseio.com/todo.json`, this.todo)
-          ;            
+          ;       
+           this.jobs=[];
+       this.$http.get('https://myhm-fcbd9.firebaseio.com/todo.json')
+      .then((res) => {       
+        return res.json()
+      }).then((res) => {  
+            Object.entries(res).forEach(entry => {
+            const [key, value] = entry;
+            this.jobs.push({id:key,value})
+  
+  console.log(key, value);
+})
+     
+      })     
     },
        
     deleteDo(event) {
