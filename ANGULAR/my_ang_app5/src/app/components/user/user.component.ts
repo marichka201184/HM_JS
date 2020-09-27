@@ -4,7 +4,7 @@ import {Post} from '../../models/post';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
 import { PostService } from 'src/app/services/post.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 
 @Component({
@@ -31,12 +31,22 @@ export class UserComponent {
   // }
 
 
-  constructor() {
+  constructor(private router: Router,
+    private postService: PostService,
+    private activatedroute:ActivatedRoute)
+              // private router: Router) 
+             {
    
      
    } 
-  
-  
+ 
+   MyId(id:number) {
+     this.router.navigate(['post',id],{state:{xxx:this.user.id},relativeTo: this.activatedroute})
+    console.log(id)
+    this.postService.getPostByUserId(id).subscribe(value => 
+      console.log(value))
+    
+  }
 
 }
 
