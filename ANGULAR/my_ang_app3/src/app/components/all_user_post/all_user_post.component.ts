@@ -17,7 +17,7 @@ export class UserPostsComponent {
   constructor(private router: Router,private postService: PostService
   ) {
    console.log(this.router.getCurrentNavigation().extras.state.xxx)     
-   this.postService.getPostByUserId(this.router.getCurrentNavigation().extras.state.xxx).subscribe(value => {
+   this.postService.getPostByUserId(history.state.xxx).subscribe(value => {
    this.postList=value;
  } )
     }
