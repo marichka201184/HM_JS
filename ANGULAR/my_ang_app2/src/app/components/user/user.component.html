@@ -1,0 +1,11 @@
+<div >
+    -{{user.id}}
+    -{{user.name}}
+    -{{user.username}}
+    <!-- <button (click)='MyId(user.id)'>Post</button> -->
+   <button [routerLink]="['post',user.id]">POST</button>
+    <hr>
+    
+ </div>
+
+ 
