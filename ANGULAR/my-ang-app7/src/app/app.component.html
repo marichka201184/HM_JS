@@ -27,19 +27,16 @@
      </form>
  
 <div *ngIf="user.name">
-  ID:{{user.id}} 
-  <br>
-  NAME:{{user.name}} 
-  <br>
-  USERNAME:{{user.username}}
-</div>
+  {{user.id|adder:'ID: '}}{{user.name|adder:'--NAME:'}}{{user.username|adder:'--USERNAME: '}} 
+   
+  </div>
 <hr>
 <div *ngIf="post.title">
-  ID: {{post.id}} 
+  {{post.id|adder:'ID: '}} 
   <br>
-  TITLE: {{post.title}} 
+  {{post.title|adder:'TITLE: '}} 
   <br>
-  BODY: {{post.body}}
+  {{post.body|adder:'BODY: '}}
 </div>
  
 
