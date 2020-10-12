@@ -13,7 +13,7 @@ export class UserService {
 
   }
 
-  getUserById(id: string): Observable<User> {
+  getUserById(id: number): Observable<User> {
     return this.http.get<User>(`http://jsonplaceholder.typicode.com/users/${id}`);
 
   }

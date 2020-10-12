@@ -14,12 +14,14 @@ export class PostService {
   }
 
 
-  getPostByUserId(id: string): Observable<Post[]> {
+  getPostByUserId(id: number): Observable<Post[]> {
     return this.http.get<Post[]>(`http://jsonplaceholder.typicode.com/posts?userId=${id}`);
 
   }
 
-  getPost(id:number): Observable<Post[]> {
-    return this.http.get<Post[]>(`http://jsonplaceholder.typicode.com/posts/${id}`);
+  getPost(id:number): Observable<Post> {
+    return this.http.get<Post>(`http://jsonplaceholder.typicode.com/posts/${id}`);
   }
+
+ 
 }

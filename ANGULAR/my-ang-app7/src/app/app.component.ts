@@ -18,7 +18,7 @@ export class AppComponent {
   users: User[];
   user: User={id:0,name:'',username:''};
   posts: Post[];
-  post: Post={userId:0,id:'0',title:'',body:''};
+  post: Post={id:0};
   
 
 
@@ -28,6 +28,7 @@ export class AppComponent {
   this.userService.getUsers().subscribe(value => 
     this.users=value)   
     console.log(this.users)
+ 
   }
 
   searchUser(form: NgForm): void {    
@@ -41,9 +42,11 @@ export class AppComponent {
           console.log(this.posts)
        
       this.postService.getPost(form.controls.idP.value).subscribe(value => 
-          this.post=value)
-          console.log(this.post)    
-              
+        this.post=value)
+         console.log(form.controls.idP.value) ;
+       
+         console.log(this.post)    
+         
       
       
 }
