@@ -15,25 +15,31 @@ import {FormControl, FormGroup} from '@angular/forms';
 })
 export class AppComponent {
   title = 'my-ang-app7';
-   users: User[];
-  user: any = {id: 0};
-  post: any = {id: 0};
+  users: User[];
+  user: User={id:0,name:'',username:''};
   posts: Post[];
+  post: Post={userId:0,id:'0',title:'',body:''};
+  
 
 
   constructor(private userService: UserService,
     private postService: PostService,
 ) {
+  this.userService.getUsers().subscribe(value => 
+    this.users=value)   
+    console.log(this.users)
   }
 
-  searchUser(form: NgForm): void {       
+  searchUser(form: NgForm): void {    
+   
       this.userService.getUserById(form.controls.id.value).subscribe(value => 
-        this.user=value)
+       this.user=value   )
       console.log(this.user)
+
       this.postService.getPostByUserId(form.controls.id.value).subscribe(value => 
           this.posts=value)
           console.log(this.posts)
-        
+       
       this.postService.getPost(form.controls.idP.value).subscribe(value => 
           this.post=value)
           console.log(this.post)    
