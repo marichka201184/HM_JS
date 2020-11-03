@@ -1,0 +1,31 @@
+
+<form [formGroup]="form" (ngSubmit)="searchUser(form)">
+     <select formControlName="id" [(ngModel)]="user.id">
+      <option *ngFor="let user of users" [value]="user.id">
+        {{user.id}} -{{user.name}}
+       </option> 
+       </select>
+    <button  *ngIf="form.controls.id.value">Select user</button>
+    <br>
+    <select *ngIf="form.controls.id.value" formControlName="idP" [(ngModel)]="post.id">
+      <option *ngFor="let post of posts" [value]="post.id">
+       {{post.id}} -{{post.title}}
+      </option>
+    </select>   
+    <button  *ngIf="form.controls.id.value">Select post</button>
+     </form>
+ 
+<div *ngIf="user.name">
+  {{user.id|adder:'ID: '}}{{user.name|adder:'--NAME:'}}{{user.username|adder:'--USERNAME: '}} 
+   
+  </div>
+<hr>
+<div *ngIf="post.title">
+  {{post.id|adder:'ID: '}} 
+  <br>
+  {{post.title|adder:'TITLE: '}} 
+  <br>
+  {{post.body|adder:'BODY: '}}
+</div>
+ 
+
