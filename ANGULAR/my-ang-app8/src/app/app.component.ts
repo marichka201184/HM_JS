@@ -4,7 +4,7 @@ import {User} from './models/user';
 import {Post} from './models/post';
 import {UserService} from './services/user.service';
 import {PostService} from './services/post.service';
-import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
 
 
@@ -24,38 +24,34 @@ export class AppComponent {
   
 
 
-  constructor(private userService: UserService,
-    private postService: PostService,
-) {
-  this.userService.getUsers().subscribe(value => 
-    this.users=value)   
-    console.log(this.users)
-   
- 
-  }
+  constructor(private userService: UserService,private postService: PostService
+) { }
+
+ngOnInit(): void {
+  this.userService.getUsers().subscribe(value => this.users = value);
+  this.form = new FormGroup({
+    id: new FormControl(1)
+  });
+  this.searchUser(this.form);
+  console.log(this.form)
+}
 
   
-  searchUser(form: FormGroup): void {   
-    
-    
-      this.userService.getUserById(form.controls.id.value).subscribe(value => 
-       this.user=value   )
-      console.log(this.user)
+  searchUser(form: FormGroup): void {  
+  console.log(this.form)     
+  this.userService.getUserById(form.controls.id.value).subscribe(value => 
+  this.user=value   )
+   console.log(this.user)
+}
 
-      this.postService.getPostByUserId(form.controls.id.value).subscribe(value => 
-          this.posts=value)
-          console.log(this.posts)
-       
-      this.postService.getPost(form.controls.idP.value).subscribe(value => 
-        this.post=value)
-         console.log(form.controls.idP.value) ;
-       
-         console.log(this.post)    
-         
-      
-      
+ getPostByUserId(form: FormGroup): void {
+  console.log(this.form) 
+  const id=form.controls.id.value;
+  console.log(id)
+  this.postService.getPostByUserId(id).subscribe(value => 
+  this.posts=value)
+  console.log(this.posts)
 }
 
 }
-
 
